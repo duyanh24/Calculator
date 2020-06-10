@@ -31,68 +31,68 @@ class KeyboardFragment(private val sendMessage: SendMessage) : Fragment(),View.O
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        button_zero.setOnClickListener(this)
-        button_one.setOnClickListener(this)
-        button_two.setOnClickListener (this)
-        button_three.setOnClickListener(this)
-        button_four.setOnClickListener(this)
-        button_fire.setOnClickListener(this)
-        button_six.setOnClickListener(this)
-        button_seven.setOnClickListener(this)
-        button_eight.setOnClickListener(this)
-        button_nine.setOnClickListener(this)
-        button_add.setOnClickListener(this)
-        button_sub.setOnClickListener(this)
-        button_multi.setOnClickListener(this)
-        button_division.setOnClickListener(this)
-        button_c.setOnClickListener(this)
-        button_ac.setOnClickListener(this)
-        button_equal_sign.setOnClickListener(this)
-        button_dot.setOnClickListener(this)
+        buttonZero.setOnClickListener(this)
+        buttonOne.setOnClickListener(this)
+        buttonTwo.setOnClickListener (this)
+        buttonThree.setOnClickListener(this)
+        buttonFour.setOnClickListener(this)
+        buttonFire.setOnClickListener(this)
+        buttonSix.setOnClickListener(this)
+        buttonSeven.setOnClickListener(this)
+        buttonEight.setOnClickListener(this)
+        buttonNine.setOnClickListener(this)
+        buttonAdd.setOnClickListener(this)
+        buttonSub.setOnClickListener(this)
+        buttonMulti.setOnClickListener(this)
+        buttonDivision.setOnClickListener(this)
+        buttonC.setOnClickListener(this)
+        buttonAc.setOnClickListener(this)
+        buttonEqualSign.setOnClickListener(this)
+        buttonDot.setOnClickListener(this)
     }
 
     override fun onClick(p0: View?) {
         when(p0?.id){
-            R.id.button_zero->{
+            R.id.buttonZero->{
                 if(operator.isNotEmpty()){
                     if(operand2.isNotEmpty()){
-                        addNumber("0")
+                        addNumber(buttonZero.text.toString())
                     }
                 }else{
                     if(operand1.isNotEmpty()){
-                        addNumber("0")
+                        addNumber(buttonZero.text.toString())
                     }
                 }
             }
 
-            R.id.button_one->{
-                addNumber("1")
+            R.id.buttonOne->{
+                addNumber(buttonOne.text.toString())
             }
-            R.id.button_two->{
-                addNumber("2")
+            R.id.buttonTwo->{
+                addNumber(buttonTwo.text.toString())
             }
-            R.id.button_three->{
-                addNumber("3")
+            R.id.buttonThree->{
+                addNumber(buttonThree.text.toString())
             }
-            R.id.button_four->{
-                addNumber("4")
+            R.id.buttonFour->{
+                addNumber(buttonFour.text.toString())
             }
-            R.id.button_fire->{
-                addNumber("5")
+            R.id.buttonFire->{
+                addNumber(buttonFire.text.toString())
             }
-            R.id.button_six->{
-                addNumber("6")
+            R.id.buttonSix->{
+                addNumber(buttonSix.text.toString())
             }
-            R.id.button_seven->{
-                addNumber("7")
+            R.id.buttonSeven->{
+                addNumber(buttonSeven.text.toString())
             }
-            R.id.button_eight->{
-                addNumber("8")
+            R.id.buttonEight->{
+                addNumber(buttonEight.text.toString())
             }
-            R.id.button_nine->{
-                addNumber("9")
+            R.id.buttonNine->{
+                addNumber(buttonNine.text.toString())
             }
-            R.id.button_c->{
+            R.id.buttonC->{
                 if(operator.isNotEmpty()){
                     if(operand2.isNotEmpty()){
                         operand2.deleteCharAt(operand2.lastIndex)
@@ -105,24 +105,24 @@ class KeyboardFragment(private val sendMessage: SendMessage) : Fragment(),View.O
                     }
                 }
             }
-            R.id.button_ac->{
+            R.id.buttonAc->{
                 clear()
                 clearColorButton()
                 sendMessage.sendData(operand1.toString())
             }
-            R.id.button_add->{
-                addOperator("+",button_add)
+            R.id.buttonAdd->{
+                addOperator(buttonAdd.text.toString(),buttonAdd)
             }
-            R.id.button_sub->{
-                addOperator("-",button_sub)
+            R.id.buttonSub->{
+                addOperator(buttonSub.text.toString(),buttonSub)
             }
-            R.id.button_multi->{
-                addOperator("x",button_multi)
+            R.id.buttonMulti->{
+                addOperator(buttonMulti.text.toString(),buttonMulti)
             }
-            R.id.button_division->{
-                addOperator("/",button_division)
+            R.id.buttonDivision->{
+                addOperator(buttonDivision.text.toString(),buttonDivision)
             }
-            R.id.button_equal_sign->{
+            R.id.buttonEqualSign->{
                 calculator()
             }
         }
@@ -191,9 +191,9 @@ class KeyboardFragment(private val sendMessage: SendMessage) : Fragment(),View.O
     // clear color for all button operator
     @SuppressLint("ResourceAsColor")
     private fun clearColorButton(){
-        button_add.setBackgroundColor(button_add.context.resources.getColor(R.color.colorBackgroundButton))
-        button_sub.setBackgroundColor(button_sub.context.resources.getColor(R.color.colorBackgroundButton))
-        button_division.setBackgroundColor(button_division.context.resources.getColor(R.color.colorBackgroundButton))
-        button_multi.setBackgroundColor(button_multi.context.resources.getColor(R.color.colorBackgroundButton))
+        buttonAdd.setBackgroundColor(buttonAdd.context.resources.getColor(R.color.colorBackgroundButton))
+        buttonSub.setBackgroundColor(buttonSub.context.resources.getColor(R.color.colorBackgroundButton))
+        buttonDivision.setBackgroundColor(buttonDivision.context.resources.getColor(R.color.colorBackgroundButton))
+        buttonMulti.setBackgroundColor(buttonMulti.context.resources.getColor(R.color.colorBackgroundButton))
     }
 }

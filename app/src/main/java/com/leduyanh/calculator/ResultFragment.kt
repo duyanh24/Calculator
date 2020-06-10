@@ -19,7 +19,7 @@ class ResultFragment : Fragment() {
 
     // receive data form Keyboard fragment and display
     fun displayReceivedData(message: String){
-        txt_result.text = message
+        textResult.text = message
 
     }
 }
